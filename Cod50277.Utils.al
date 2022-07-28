@@ -12,19 +12,19 @@ codeunit 50277 "Utils "
             UNTIL Countries.NEXT = 0;
     end;
 
-    Local Procedure FnGetRespCenterCode(VAR PPosition: Integer) RespCenterCode: Code[20]
+    Local Procedure FnGetRespCenterCode(VAR PPosition: Integer) RespCountryCode: Code[20]
     var
         Countries: record "Country/Region";
         LCounter: Integer;
     begin
-        CLEAR(RespCenterCode);
+        CLEAR(RespCountryCode);
         CLEAR(LCounter);
         LCounter := 1;
         Countries.SetRange("Load On Sales Order", true);
         IF Countries.FINDFIRST THEN
             REPEAT
                 LCounter := LCounter + 1;
-                IF LCounter = PPosition THEN RespCenterCode := Countries.Code;
+                IF LCounter = PPosition THEN RespCountryCode := Countries.Code;
             UNTIL Countries.NEXT = 0;
     end;
 

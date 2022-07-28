@@ -11,27 +11,7 @@ pageextension 50278 "Sales Order" extends "Sales Order"
                 Utils.FnSetCountry(Rec);
             end;
         }
-        modify("Quote No.")
-        {
-            Editable = true;
-        }
-        modify("Ship-to code")
-        {
-            editable = true;
-        }
-        modify(Status)
-        {
-            Editable = true;
-        }
-        modify("Ship-to Address")
-        {
-            Editable = true;
-        }
-        modify("Ship-to Country/Region Code")
-        {
-            Editable = true;
 
-        }
         addafter(Status)
         {
             field("Country of Order"; Rec."Country of Order")
